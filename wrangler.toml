@@ -1,0 +1,7 @@
+name = "hayzer-home-base"
+type = "javascript"
+
+account_id = "cf7d06f5ce923e2ea2b13965a3aa8de0"
+workers_dev = false
+
+compatibility_date = "2024-04-05"
