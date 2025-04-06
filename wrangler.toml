@@ -1,7 +1,11 @@
 name = "hayzer-home-base"
-type = "javascript"
-
 account_id = "cf7d06f5ce923e2ea2b13965a3aa8de0"
-workers_dev = false
-
+workers_dev = true  # or false if you're using a custom domain
 compatibility_date = "2024-04-05"
+
+# Specify the entry-point for your Worker
+main = "worker.js"  # Adjust to your actual Worker file name
+
+# Define the static assets directory
+[assets]
+directory = "./public"
