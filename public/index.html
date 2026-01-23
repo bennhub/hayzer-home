@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hayzer Apps</title>
+  <link rel="icon" type="image/png" href="./favicon/favicon-32x32.png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Shadows Into Light Two&family=Teko&family=Barriecito&family=Zen+Dots&family=Roboto:wght@300;400;500&display=swap');
 
@@ -106,7 +107,7 @@
       font-family: 'Zen Dots', sans-serif;
       font-size: 1.5rem;
       margin-bottom: 10px;
-      color: rgb(255, 145, 0);
+      color: rgb(246 233 161);
       animation: title-pulse 4.5s infinite alternate;
     }
 
@@ -125,6 +126,14 @@
       line-height: 1.5;
     }
 
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
     .store-link {
       display: inline-block;
       background-color: #222;
@@ -133,9 +142,29 @@
       border-radius: 20px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 10px;
       transition: background-color 0.3s;
       animation: button-pulse 3.5s infinite alternate;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-button {
+      display: inline-block;
+      background-color: #333;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: normal;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      border: 1px solid #555;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     @keyframes button-pulse {
@@ -152,6 +181,10 @@
       background-color: #444;
     }
 
+    .video-button:hover {
+      background-color: #555;
+    }
+
     footer {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
@@ -163,6 +196,69 @@
       margin-top: 10px;
     }
 
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      background-color: #111;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      animation: modal-glow 3s infinite alternate;
+    }
+
+    @keyframes modal-glow {
+      0% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+      }
+    }
+
+    .close-button {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+
     /* Mobile responsiveness */
     @media (max-width: 600px) {
       .title {
@@ -171,6 +267,15 @@
 
       .lightning {
         font-size: 1.8rem;
+      }
+      
+      .modal-content {
+        width: 95%;
+      }
+      
+      .close-button {
+        top: -35px;
+        font-size: 24px;
       }
     }
   </style>
@@ -196,17 +301,62 @@
       </div>
 
       <div class="app-card">
+        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 5px;">
+          <img src="chop_block_subtext_360px.png" alt="Chop Block Logo" style="width: 45px; height: 45px; margin-right: 10px;">
+          <div class="app-title">Chop Block</div>
+        </div>
+        <div style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">Simple Loop Slicer</div>
+        <div class="app-description">A powerful desktop audio slicer designed for producers, musicians, and sound designers who need precise sample chopping.</div>
+
+        <div class="button-container">
+          <a href="https://chopblock.hayzer.app/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="store-link">
+            Launch Chop Block
+          </a>
+        </div>
+      </div>
+
+      <div class="app-card">
         <div class="app-title">Groove Slider</div>
         <div class="app-description">A simple app that synchronizes your image slideshows with music. Transform
           your photos into dynamic visual experiences that move to the beat of your favorite tracks.</div>
-        <a href="#" class="store-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
-            style="margin-right: 8px; vertical-align: middle;">
-            <path
-              d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-          </svg>
-          Coming soon | Google Play Store
-        </a>
+        
+        <div class="button-container">
+          <a href="https://play.google.com/store/apps/details?id=app.hayzer.grooveslider.twa" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="store-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+              style="margin-right: 8px; vertical-align: middle;">
+              <path
+                d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+            </svg>
+            Get it on Google Play
+          </a>
+          
+          <button class="video-button" id="watchVideoBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#ff0000"
+              style="margin-right: 6px; vertical-align: middle;">
+              <path d="M23.498 6.186a2.995 2.995 0 0 0-2.11-2.11C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.388.53A2.995 2.995 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.995 2.995 0 0 0 2.11 2.11c1.883.53 9.388.53 9.388.53s7.505 0 9.388-.53a2.995 2.995 0 0 0 2.11-2.11C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            See it in action
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <button class="close-button" id="closeModal">×</button>
+      <div class="video-container">
+        <!-- Replace YOUR_YOUTUBE_VIDEO_ID with your actual YouTube video ID -->
+        <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -217,7 +367,39 @@
     </div>
   </footer>
 
-
+  <script>
+    // Get DOM elements
+    const modal = document.getElementById('videoModal');
+    const watchVideoBtn = document.getElementById('watchVideoBtn');
+    const closeModal = document.getElementById('closeModal');
+    const youtubeFrame = document.getElementById('youtubeFrame');
+    
+    // Replace this with your YouTube video ID
+    const youtubeVideoId = '9YBFB2Y1pCs'; // Replace with your actual YouTube video ID
+    
+    // Open modal and play video
+    watchVideoBtn.addEventListener('click', function() {
+      youtubeFrame.src = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1`;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    });
+    
+    // Close modal and stop video
+    closeModal.addEventListener('click', function() {
+      youtubeFrame.src = '';
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    });
+    
+    // Close modal when clicking outside of the content
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        youtubeFrame.src = '';
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 </body>
 
 </html>
