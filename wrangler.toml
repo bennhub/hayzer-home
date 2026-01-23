@@ -1,4 +1,4 @@
-name = "hayzer-home-base"
+name = "hayzer-home"
 account_id = "cf7d06f5ce923e2ea2b13965a3aa8de0"
 workers_dev = true  # or false if you're using a custom domain
 compatibility_date = "2024-04-05"
