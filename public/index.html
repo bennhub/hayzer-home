@@ -139,7 +139,7 @@
       background-color: #222;
       color: white;
       padding: 10px 20px;
-      border-radius: 20px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
       transition: background-color 0.3s;
@@ -155,7 +155,7 @@
       background-color: #333;
       color: white;
       padding: 8px 16px;
-      border-radius: 20px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: normal;
       font-size: 0.9rem;
@@ -204,7 +204,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
       z-index: 1000;
       justify-content: center;
       align-items: center;
@@ -214,7 +215,7 @@
       position: relative;
       width: 90%;
       max-width: 800px;
-      background-color: #111;
+      background-color: #000;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
       animation: modal-glow 3s infinite alternate;
@@ -259,6 +260,199 @@
       border-radius: 10px;
     }
 
+    /* Chop Block Theme */
+    .chop-block-card {
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(252, 252, 124, 0.05));
+      border: 2px solid #4ecdc4;
+      box-shadow: 0 0 15px rgba(78, 205, 196, 0.3);
+      animation: chop-block-glow 3s infinite alternate;
+    }
+
+    @keyframes chop-block-glow {
+      0% {
+        border-color: #4ecdc4;
+        box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+      }
+      100% {
+        border-color: #fcfc7c;
+        box-shadow: 0 0 20px rgba(78, 205, 196, 0.5), 0 0 10px rgba(252, 252, 124, 0.3);
+      }
+    }
+
+    .chop-block-title {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #4ecdc4 !important;
+      text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+      animation: chop-block-title-pulse 4.5s infinite alternate !important;
+    }
+
+  
+    .chop-block-subtitle {
+      font-size: 0.9rem;
+      color: #fcfc7c;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px rgba(252, 252, 124, 0.5);
+    }
+
+    .chop-block-description {
+      color: #ffffff;
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+    }
+
+    .chop-block-button {
+      background: linear-gradient(135deg, #4ecdc4, #fcfc7c);
+      color: #000000 !important;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      border-radius: 8px !important;
+      box-shadow: 0 0 10px rgba(78, 205, 196, 0.4);
+      animation: chop-block-button-pulse 2s infinite alternate !important;
+      transition: all 0.3s ease;
+    }
+
+    @keyframes chop-block-button-pulse {
+      0% {
+        box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);
+        transform: scale(1);
+      }
+      100% {
+        box-shadow: 0 0 15px rgba(78, 205, 196, 0.8), 0 0 10px rgba(252, 252, 124, 0.6);
+        transform: scale(1.02);
+      }
+    }
+
+    .chop-block-button:hover {
+      background: linear-gradient(135deg, #fcfc7c, #4ecdc4) !important;
+      box-shadow: 0 0 20px rgba(78, 205, 196, 0.8), 0 0 15px rgba(252, 252, 124, 0.8);
+      transform: scale(1.05);
+    }
+
+    /* CTA Button */
+    .cta-container {
+      margin-top: 15px;
+    }
+
+    .cta-button {
+      background: transparent;
+      color: #4ecdc4;
+      border: 2px solid #4ecdc4;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: normal;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: rgba(78, 205, 196, 0.1);
+      border-color: #fcfc7c;
+      color: #fcfc7c;
+    }
+
+    /* About Modal Styles */
+    .about-modal-content {
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: linear-gradient(135deg, #000000, #111111);
+      border: 2px solid #4ecdc4;
+      box-shadow: 0 0 30px rgba(78, 205, 196, 0.6);
+      animation: about-modal-glow 3s infinite alternate;
+    }
+
+    @keyframes about-modal-glow {
+      0% {
+        border-color: #4ecdc4;
+        box-shadow: 0 0 20px rgba(78, 205, 196, 0.4);
+      }
+      100% {
+        border-color: #fcfc7c;
+        box-shadow: 0 0 40px rgba(78, 205, 196, 0.8), 0 0 20px rgba(252, 252, 124, 0.4);
+      }
+    }
+
+    .about-modal-body {
+      padding: 30px;
+      color: #ffffff;
+    }
+
+    .about-section-modal h2 {
+      color: #4ecdc4;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+    }
+
+    .about-section-modal p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .contact-section-modal {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(78, 205, 196, 0.3);
+    }
+
+    .contact-section-modal h3 {
+      color: #fcfc7c;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px rgba(252, 252, 124, 0.5);
+    }
+
+    .contact-section-modal p {
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-item {
+      background: rgba(78, 205, 196, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+      border-left: 3px solid #4ecdc4;
+    }
+
+    .contact-item strong {
+      color: #4ecdc4;
+    }
+
+    .social-section-modal {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(252, 252, 124, 0.3);
+      text-align: center;
+    }
+
+    .social-section-modal h3 {
+      color: #fcfc7c;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px rgba(252, 252, 124, 0.5);
+    }
+
+    .social-icons-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+    }
+
+    .social-placeholder {
+      color: #ffffff;
+      font-style: italic;
+      opacity: 0.7;
+    }
+
     /* Mobile responsiveness */
     @media (max-width: 600px) {
       .title {
@@ -268,11 +462,35 @@
       .lightning {
         font-size: 1.8rem;
       }
-      
+
       .modal-content {
         width: 95%;
       }
-      
+
+      .about-modal-content {
+        width: 95%;
+        max-height: 85vh;
+        margin: 20px;
+      }
+
+      .about-modal-body {
+        padding: 20px;
+      }
+
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+
+      .contact-methods {
+        gap: 8px;
+      }
+
+      .contact-item {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+
       .close-button {
         top: -35px;
         font-size: 24px;
@@ -290,29 +508,31 @@
             <path d="M13 2L4.5 12.5H11L10 22L18.5 11.5H12L13 2Z" />
           </svg>
         </span> Apps</div>
-      <div class="find-out-more">Find out more!</div>
+      <div class="cta-container">
+        <button class="cta-button" id="aboutCTABtn">About Hayzer Apps</button>
+      </div>
     </div>
 
     <div class="content-section">
       <div class="about-section">
         <h2>About Hayzer Apps</h2>
-        <p>We build cool apps. Simple as that. Our goal is to make your digital life better while adding a little fun to
+        <p>I build creative apps. Simple as that. My goal is to make your digital life better while adding a little fun to
           your day-to-day. No unnecessary features, just thoughtfully designed Apps. </p>
       </div>
 
-      <div class="app-card">
+      <div class="app-card chop-block-card">
         <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 5px;">
           <img src="chop_block_subtext_360px.png" alt="Chop Block Logo" style="width: 45px; height: 45px; margin-right: 10px;">
-          <div class="app-title">Chop Block</div>
+          <div class="chop-block-title">Chop Block</div>
         </div>
-        <div style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">Simple Loop Slicer</div>
-        <div class="app-description">A powerful desktop audio slicer designed for producers, musicians, and sound designers who need precise sample chopping.</div>
+        <div class="chop-block-subtitle">Simple Loop Slicer</div>
+        <div class="app-description chop-block-description">A powerful desktop audio slicer designed for producers, musicians, and sound designers who need precise sample chopping.</div>
 
         <div class="button-container">
           <a href="https://chopblock.hayzer.app/"
              target="_blank"
              rel="noopener noreferrer"
-             class="store-link">
+             class="store-link chop-block-button">
             Launch Chop Block
           </a>
         </div>
@@ -354,15 +574,48 @@
       <button class="close-button" id="closeModal">×</button>
       <div class="video-container">
         <!-- Replace YOUR_YOUTUBE_VIDEO_ID with your actual YouTube video ID -->
-        <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        <iframe id="youtubeFrame" width="560" height="315" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content about-modal-content">
+      <button class="close-button" id="closeAboutModal">×</button>
+      <div class="about-modal-body">
+        <div class="about-section-modal">
+          <h2>About Hayzer Apps</h2>
+          <p>I make music. I make apps. Sometimes they help each other.</p>
+            <p>Hayzer is where I drop the tools I’ve developed to help my own production journey. I figured if they help me, y’all might like ‘em too. Give ‘em a spin and let me know what you think.</p>
+        </div>
+
+        <div class="contact-section-modal">
+          <h3>Get In Touch</h3>
+          <p>Have a question, suggestion, or just want to say hi? I'd love to hear from you!</p>
+          <div class="contact-methods">
+            <div class="contact-item">
+              <strong>Email:</strong> contact@hayzer.app
+            </div>
+    
+          </div>
+        </div>
+
+        <div class="social-section-modal">
+          <h3>Follow Along</h3>
+          <div class="social-icons-placeholder">
+            <!-- Social media icons will be added here -->
+            <div class="social-placeholder">Social Media Icons Coming Soon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    <div>&copy; 2025 Hayzer Apps - All Rights Reserved</div>
+    <div>&copy; 2026 Hayzer Apps - All Rights Reserved</div>
     <div class="contact-info">
     </div>
   </footer>
@@ -373,29 +626,50 @@
     const watchVideoBtn = document.getElementById('watchVideoBtn');
     const closeModal = document.getElementById('closeModal');
     const youtubeFrame = document.getElementById('youtubeFrame');
-    
+
+    // About modal elements
+    const aboutModal = document.getElementById('aboutModal');
+    const aboutCTABtn = document.getElementById('aboutCTABtn');
+    const closeAboutModal = document.getElementById('closeAboutModal');
+
     // Replace this with your YouTube video ID
     const youtubeVideoId = '9YBFB2Y1pCs'; // Replace with your actual YouTube video ID
-    
-    // Open modal and play video
+
+    // Open video modal and play video
     watchVideoBtn.addEventListener('click', function() {
       youtubeFrame.src = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1`;
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     });
-    
-    // Close modal and stop video
+
+    // Close video modal and stop video
     closeModal.addEventListener('click', function() {
       youtubeFrame.src = '';
       modal.style.display = 'none';
       document.body.style.overflow = 'auto'; // Re-enable scrolling
     });
-    
-    // Close modal when clicking outside of the content
+
+    // Open about modal
+    aboutCTABtn.addEventListener('click', function() {
+      aboutModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    });
+
+    // Close about modal
+    closeAboutModal.addEventListener('click', function() {
+      aboutModal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    });
+
+    // Close modals when clicking outside of the content
     window.addEventListener('click', function(event) {
       if (event.target === modal) {
         youtubeFrame.src = '';
         modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      if (event.target === aboutModal) {
+        aboutModal.style.display = 'none';
         document.body.style.overflow = 'auto';
       }
     });
