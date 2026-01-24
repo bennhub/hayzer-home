@@ -120,6 +120,27 @@ body {
   border: 1px solid #fff !important;
 }
 
+/* Buy me a coffee button styling */
+.coffee-button-wrapper {
+  transform: scale(0.75);
+  display: flex;
+  justify-content: center;
+}
+
+.coffee-button-wrapper * {
+  transform: scale(1) !important;
+}
+
+[data-name="bmc-button"],
+.bmc-button,
+#bmc-button,
+iframe[src*="buymeacoffee"],
+div[id*="bmc"],
+.bmc-btn {
+  transform: scale(0.75) !important;
+  margin: 0 auto !important;
+}
+
 @keyframes title-pulse {
   0% {
     filter: drop-shadow(0 0 2px rgb(215, 135, 6));
