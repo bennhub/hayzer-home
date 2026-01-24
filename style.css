@@ -108,6 +108,18 @@ body {
   animation: none !important;
 }
 
+.wow-settings-card {
+  border: 1px solid #d26420 !important;
+}
+
+.wow-settings-button {
+  background-color: #d26420 !important;
+}
+
+.groove-slider-card {
+  border: 1px solid #fff !important;
+}
+
 @keyframes title-pulse {
   0% {
     filter: drop-shadow(0 0 2px rgb(215, 135, 6));
